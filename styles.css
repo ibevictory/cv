@@ -37,7 +37,7 @@ h3 {
 }
 
 /* Paragraph and strong text */
-p, strong {
+p, strong, em {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #333;
@@ -177,16 +177,18 @@ hr {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .hobbies-button:hover, .contact-button:hover {
   background-color: #ad1457;
+  transform: scale(1.05);
 }
 
 /* Hobbies popup */
 .hobbies-button {
   position: relative;
+  display: inline-block;
 }
 
 .hobbies-popup {
@@ -202,10 +204,15 @@ hr {
   z-index: 10;
   min-width: 200px;
   text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  visibility: hidden;
 }
 
 .hobbies-button:hover .hobbies-popup {
   display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .hobbies-popup h3 {
@@ -215,6 +222,11 @@ hr {
 
 .hobbies-popup ol {
   padding-left: 20px;
+  list-style-position: inside;
+}
+
+.hobbies-popup ol li {
+  margin-bottom: 5px;
 }
 
 /* Responsive design with media queries */
