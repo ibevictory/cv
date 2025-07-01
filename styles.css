@@ -159,6 +159,64 @@ hr {
   border-top: 1px solid #ccc;
 }
 
+/* Button container (for My Hobbies and Contact Me) */
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Button styles for Hobbies and Contact Me */
+.hobbies-button, .contact-button {
+  background-color: #d81b60;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hobbies-button:hover, .contact-button:hover {
+  background-color: #ad1457;
+}
+
+/* Hobbies popup */
+.hobbies-button {
+  position: relative;
+}
+
+.hobbies-popup {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  min-width: 200px;
+  text-align: left;
+}
+
+.hobbies-button:hover .hobbies-popup {
+  display: block;
+}
+
+.hobbies-popup h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.hobbies-popup ol {
+  padding-left: 20px;
+}
+
 /* Responsive design with media queries */
 @media (max-width: 768px) {
   h1 {
@@ -193,6 +251,24 @@ hr {
     font-size: 0.9rem;
     padding: 8px;
   }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hobbies-button, .contact-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hobbies-popup {
+    bottom: auto;
+    top: 100%;
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -216,5 +292,9 @@ hr {
 
   form input[type="submit"] {
     padding: 8px 15px;
+  }
+
+  .hobbies-button, .contact-button {
+    padding: 10px 20px;
   }
 }
