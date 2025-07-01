@@ -57,7 +57,7 @@ p, strong, em {
   max-width: 200px;
   width: 100%;
   height: auto;
-  border-radius: 50%;
+  border半径: 50%;
   display: block;
   margin: 0 auto;
 }
@@ -132,7 +132,9 @@ form textarea {
 
 form input[type="submit"] {
   background-color: #d81b60;
-  color: white;
+  color: white
+
+;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -194,30 +196,34 @@ hr {
 .hobbies-popup {
   display: none;
   position: absolute;
-  bottom: 100%;
+  top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.95);
-  padding: 15px;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  min-width: 200px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  min-width: 250px;
+  max-width: 300px;
   text-align: left;
   opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
   visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateX(-50%) translateY(-10px);
 }
 
 .hobbies-button:hover .hobbies-popup {
   display: block;
   opacity: 1;
   visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .hobbies-popup h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: #283593;
 }
 
 .hobbies-popup ol {
@@ -226,7 +232,8 @@ hr {
 }
 
 .hobbies-popup ol li {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  color: #333;
 }
 
 /* Responsive design with media queries */
@@ -276,10 +283,9 @@ hr {
   }
 
   .hobbies-popup {
-    bottom: auto;
-    top: 100%;
+    top: calc(100% + 5px);
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
   }
 }
 
@@ -309,4 +315,7 @@ hr {
   .hobbies-button, .contact-button {
     padding: 10px 20px;
   }
-}
+
+  .hobbies-popup {
+    min-width: 200px;
+    padding: 15
